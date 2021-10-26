@@ -1,9 +1,13 @@
 mysample.js
-raw_data/*
-setup-memo.md
+/raw_data
+setup-*memo.md
+**/bak
+*.bak
+*.bak.*
+*.eject.*
 
 # dependencies
-/node_modules
+*/node_modules
 /.pnp
 .pnp.js
 
@@ -11,7 +15,7 @@ setup-memo.md
 /coverage
 
 # production
-/build
+*/build
 
 # misc
 .DS_Store
