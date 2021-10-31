@@ -16,6 +16,7 @@ setup-*memo.md
 
 # production
 */build
+*/bundle
 
 # misc
 .DS_Store

@@ -6,12 +6,17 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
   filename: "./index.html"
 });
 
+// TODO: dynamic assign bundled js filename
 module.exports = {
   entry: path.resolve(process.cwd(), "./src/index.js"),
-  devtool: "source-map",
   output: {
     path: path.resolve(process.cwd(), "./bundle"),
-    filename: './bundle.js'
+    filename: './[name].bundle.js',
+    publicPath: '/',
+    clean: true,
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -22,13 +27,9 @@ module.exports = {
         resolve: { extensions: [".js", ".jsx"] }
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      },
-      {
         test: /\.svg$/,
         use: ["file-loader"]
-      }
+      },
     ]
   },
   plugins: [htmlWebpackPlugin]
