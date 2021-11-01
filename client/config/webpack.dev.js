@@ -1,12 +1,11 @@
 const commonConfig = require('./webpack.common');
 const {merge} = require('webpack-merge');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-// const bundleAnalyzerPlugin = new BundleAnalyzerPlugin();
-
 
 const mergedCfg = merge(commonConfig, {
+  devServer: {
+    port: 3000,
+  },
   mode: "development",
-  devtool: "source-map",
   module: {
     rules: [
       {
@@ -15,8 +14,9 @@ const mergedCfg = merge(commonConfig, {
       },
     ],
   },
-
-  // plugins: [bundleAnalyzerPlugin]
+  optimization: {
+    runtimeChunk: 'single',
+  },
 });
 
 module.exports = mergedCfg;

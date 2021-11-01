@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 // import _ from "lodash";
 
 const Home = () => {
-    // console.log(_.join(['Another', 'module', 'loaded!'], ' '));
+    // console.log(_.join(['Another', 'module', 'loaded!'], ' __'));
+    import(/* webpackChunkName: "lodash" */ 'lodash').then(({default: _}) => {
+            console.log(_.join(['Another', 'module', 'loaded!'], ' 123'));
+        }
+    );
     return (
         <>
             <div>
