@@ -9,7 +9,7 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 module.exports = {
   entry: {
     main: {
-      import: path.resolve(process.cwd(), './src/index.js'),
+      import: path.resolve(process.cwd(), './src/client/index.js'),
       dependOn: ['vendors'],
     },
     vendors: ['react', 'react-dom', 'react-router-dom','lodash'],

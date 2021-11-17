@@ -7,7 +7,7 @@ setup-*memo.md
 *.eject.*
 
 # dependencies
-*/node_modules
+node_modules
 /.pnp
 .pnp.js
 
@@ -15,8 +15,8 @@ setup-*memo.md
 /coverage
 
 # production
-*/build
-*/bundle
+build
+bundle
 
 # misc
 .DS_Store
