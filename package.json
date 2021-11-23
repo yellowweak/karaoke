@@ -11,7 +11,7 @@
     "client:prod": "webpack serve --config ./config/webpack.prod.js",
     "client:build": "webpack --config ./config/webpack.prod.js",
     "server": "NODE_ENV=development nodemon src/server/server.js  --exec babel-node",
-    "start": "NODE_ENV=production nodemon src/server/server.js  --exec babel-node"
+    "server:prod": "NODE_ENV=production nodemon src/server/server.js  --exec babel-node"
   },
   "dependencies": {
     "express": "^4.17.1",
