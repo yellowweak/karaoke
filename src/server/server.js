@@ -16,6 +16,6 @@ app.get('*', function (req, res) {
 })
 
 app.listen(port, ()=> {
-    console.log('server running at: '+process.env.NODE_ENV+'mode');
+    console.log('server running at: '+process.env.NODE_ENV+' mode');
     // console.log(process.cwd());
 })
