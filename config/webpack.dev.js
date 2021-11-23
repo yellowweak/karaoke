@@ -3,7 +3,7 @@ const {merge} = require('webpack-merge');
 
 const mergedCfg = merge(commonConfig, {
   devServer: {
-    port: 3000,
+    port: 8080,
   },
   mode: "development",
   module: {
