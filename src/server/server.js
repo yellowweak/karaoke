@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 
 const app = express();
+const port = (process.env.NODE_ENV==='production')? 5000:3000;
 
 app.use(express.static(path.resolve(process.cwd(), './bundle')));
 
@@ -14,6 +15,6 @@ app.get('*', function (req, res) {
     res.sendFile(path.resolve(process.cwd(), './bundle/index.html'))
 })
 
-app.listen(3000, ()=> {
+app.listen(port, ()=> {
     console.log('server running');
 })
