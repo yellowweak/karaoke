@@ -15,7 +15,7 @@ app.get('*', function (req, res) {
     res.sendFile(path.resolve(process.cwd(), './bundle/index.html'))
 })
 
-app.listen(5000, ()=> {
-    console.log('server running');
-    console.log(process.cwd());
+app.listen(port, ()=> {
+    console.log('server running at: '+process.env.NODE_ENV+'mode');
+    // console.log(process.cwd());
 })
