@@ -1,16 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import _ from "lodash";
+import join from "lodash/join";
 
 const endpoint = (process.env.NODE_ENV==="production")? "":"http://127.0.0.1:3000";
 
 const Home = () => {
-    // console.log(_.join(['Another', 'module', 'loaded!'], ' __'));
+    console.log(join(['Another', 'module', 'loaded!'], ' __'));
     console.log(process.env.NODE_ENV);
-    import(/* webpackChunkName: "lodash" */ 'lodash').then(({default: _}) => {
-            console.log(_.join(['Another', 'module', 'loaded!'], ' 123'));
-        }
-    );
     fetch(endpoint+"/api/")
         .then(response => response.json())
         .then(obj => {console.log(obj.api)});

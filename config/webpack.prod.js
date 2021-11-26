@@ -30,7 +30,7 @@ module.exports = merge(commonConfig, {
     splitChunks: {
       cacheGroups: {
         vendor0: {
-          test: /[\\/]node_modules[\\/]react|react-dom|react-router-dom|lodash[\\/]/,
+          test: /[\\/]node_modules[\\/]react|react-dom|react-router-dom[\\/]/,
           name: 'vendor_stuff',
           chunks: 'all',
           maxSize: 204800,

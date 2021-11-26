@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 
 const app = express();
+// TODO: make nodemon be able to detect environment
 const port = (process.env.NODE_ENV==='production')? 5000:3000;
 
 app.use(express.static(path.resolve(process.cwd(), './bundle')));

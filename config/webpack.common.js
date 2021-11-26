@@ -15,9 +15,7 @@ module.exports = {
       import: path.resolve(process.cwd(), './src/client/index.js'),
       dependOn: ['vendors'],
     },
-    vendors: ['react', 'react-dom', 'react-router-dom','lodash'],
-    // vendors: ['react', 'react-dom', 'react-router-dom'],
-    // tmp: ['lodash'],
+    vendors: ['react', 'react-dom', 'react-router-dom'],
   },
   devtool: 'source-map',
   output: {
