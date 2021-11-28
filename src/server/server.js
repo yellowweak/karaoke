@@ -12,8 +12,8 @@ app.get('/api', (req, res) => {
     res.send({api: 'test'});
 })
 
-app.get('*', function (req, res) {
-    res.sendFile(path.resolve(process.cwd(), './bundle/index.html'))
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(process.cwd(), './bundle/index.html'));
 })
 
 app.listen(port, ()=> {
