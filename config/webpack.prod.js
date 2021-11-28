@@ -1,12 +1,13 @@
 const commonConfig = require('./webpack.common');
 const {merge} = require('webpack-merge');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const bundleAnalyzerPlugin = new BundleAnalyzerPlugin({
   openAnalyzer: false,
 });
+
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const miniCssExtractPlugin = new MiniCssExtractPlugin({
   filename: "[name]_[contenthash].css",
   chunkFilename: "[id].css",
@@ -49,7 +50,7 @@ module.exports = merge(commonConfig, {
     hints: false
   },
   plugins: [
-    bundleAnalyzerPlugin,
+    // bundleAnalyzerPlugin,
     miniCssExtractPlugin,
   ],
 });
