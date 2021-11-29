@@ -17,6 +17,7 @@ node_modules
 # production
 build
 bundle
+config/database.*
 
 # misc
 .DS_Store
