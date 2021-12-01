@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import Home from "../Home";
-import Sample from "../Sample";
+import Home from "../home";
+import Sample from "../sample";
 
 const Main = () => {
     return (

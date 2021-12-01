@@ -5,6 +5,7 @@ setup-*memo.md
 *.bak
 *.bak.*
 *.eject.*
+docs/*
 
 # dependencies
 node_modules
@@ -15,8 +16,7 @@ node_modules
 /coverage
 
 # production
-build
-bundle
+.bundle
 config/database.*
 
 # misc

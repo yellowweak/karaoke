@@ -9,14 +9,14 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 module.exports = {
   entry: {
     main: {
-      import: path.resolve(process.cwd(), './src/client/index.js'),
+      import: path.resolve(process.cwd(), './views/index.js'),
       dependOn: ['vendors'],
     },
     vendors: ['react', 'react-dom', 'react-router-dom'],
   },
   devtool: 'source-map',
   output: {
-    path: path.resolve(process.cwd(), "./bundle"),
+    path: path.resolve(process.cwd(), "./.bundle"),
     filename: './[name]_[contenthash].js',
     publicPath: '/',
     clean: true,
