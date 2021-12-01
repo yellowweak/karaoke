@@ -1,7 +1,6 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+// TODO: create Ai/DXG/DX-record model
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
