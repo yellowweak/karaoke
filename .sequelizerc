@@ -1,0 +1,12 @@
+// import path from 'path';
+
+// const Sequelizerc = {
+//   'config': path.resolve(process.cwd(), 'config/database.js')
+// };
+
+// export default Sequelizerc;
+const path = require('path');
+
+module.exports = {
+  'config': path.resolve(process.cwd(), 'config/database.js')
+};
