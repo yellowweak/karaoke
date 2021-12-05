@@ -6,6 +6,7 @@ setup-*memo.md
 *.bak.*
 *.eject.*
 docs/*
+playground/*
 
 # dependencies
 node_modules
@@ -18,6 +19,7 @@ node_modules
 # production
 .bundle
 config/database.*
+migrations/templates/*
 
 # misc
 .DS_Store
