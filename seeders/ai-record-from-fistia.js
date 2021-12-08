@@ -26,24 +26,9 @@ module.exports = {
     records.sort((r1, r2)=>(r1.sang_at.getTime() - r2.sang_at.getTime()));
 
     return await queryInterface.bulkInsert('ai_score_records', records);
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
   },
 
   down: async (queryInterface) => {
     return await queryInterface.bulkDelete('ai_score_records', null);
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
   }
 };
