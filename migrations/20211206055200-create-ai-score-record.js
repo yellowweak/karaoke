@@ -1,76 +1,76 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('AiScoreRecords', {
+    return await queryInterface.createTable('ai_score_records', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      songRequestNo: { // TODO: move to other table later
+      song_request_no: { // TODO: move to other table later
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      sangAt: {
+      sang_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      totalScore: {
+      total_score: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      bonusScore: {
+      bonus_score: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      rawScore: {
+      raw_score: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      aiPositiveScore: {
+      ai_positive_score: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      aiMinusScore: {
+      ai_minus_score: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      aiFinalScore: {
+      ai_final_score: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      pitchScore: {
+      pitch_score: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      expressivenessScore: {
+      expressiveness_score: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      stabilityScore: {
+      stability_score: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      rhythmScore: {
+      rhythm_score: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      vibratoLongtoneScore: {
+      vibrato_longtone_score: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('AiScoreRecords');
+    return await queryInterface.dropTable('ai_score_records');
   }
 };
