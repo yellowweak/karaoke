@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
-import './sample.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./sample.css";
 
 const Sample = () => {
   return (
@@ -21,6 +21,6 @@ const Sample = () => {
       </header>
     </div>
   );
-}
+};
 
 export default Sample;

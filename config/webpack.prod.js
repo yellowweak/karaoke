@@ -1,8 +1,9 @@
-const commonConfig = require('./webpack.common');
-const {merge} = require('webpack-merge');
+const commonConfig = require("./webpack.common");
+const { merge } = require("webpack-merge");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const bundleAnalyzerPlugin = new BundleAnalyzerPlugin({
   openAnalyzer: false,
 });
@@ -15,7 +16,7 @@ const miniCssExtractPlugin = new MiniCssExtractPlugin({
 
 module.exports = merge(commonConfig, {
   mode: "production",
-  devServer:{
+  devServer: {
     port: 5000,
   },
   module: {
@@ -23,7 +24,7 @@ module.exports = merge(commonConfig, {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
-      }
+      },
     ],
   },
   optimization: {
@@ -32,8 +33,8 @@ module.exports = merge(commonConfig, {
       cacheGroups: {
         vendor0: {
           test: /[\\/]node_modules[\\/]react|react-dom|react-router-dom[\\/]/,
-          name: 'vendor_stuff',
-          chunks: 'all',
+          name: "vendor_stuff",
+          chunks: "all",
           maxSize: 204800,
         },
       },
@@ -47,7 +48,7 @@ module.exports = merge(commonConfig, {
     ],
   },
   performance: {
-    hints: false
+    hints: false,
   },
   plugins: [
     // bundleAnalyzerPlugin,

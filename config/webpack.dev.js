@@ -1,5 +1,5 @@
-const commonConfig = require('./webpack.common');
-const {merge} = require('webpack-merge');
+const commonConfig = require("./webpack.common");
+const { merge } = require("webpack-merge");
 
 const mergedCfg = merge(commonConfig, {
   devServer: {
@@ -15,7 +15,7 @@ const mergedCfg = merge(commonConfig, {
     ],
   },
   optimization: {
-    runtimeChunk: 'single',
+    runtimeChunk: "single",
   },
 });
 

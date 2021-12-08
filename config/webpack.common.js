@@ -1,5 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const path = require('path');
+const path = require("path");
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
   template: path.resolve(process.cwd(), "./public/index.html"),
@@ -9,16 +9,16 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 module.exports = {
   entry: {
     main: {
-      import: path.resolve(process.cwd(), './views/index.js'),
-      dependOn: ['vendors'],
+      import: path.resolve(process.cwd(), "./views/index.js"),
+      dependOn: ["vendors"],
     },
-    vendors: ['react', 'react-dom', 'react-router-dom'],
+    vendors: ["react", "react-dom", "react-router-dom"],
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   output: {
     path: path.resolve(process.cwd(), "./.bundle"),
-    filename: './[name]_[contenthash].js',
-    publicPath: '/',
+    filename: "./[name]_[contenthash].js",
+    publicPath: "/",
     clean: true,
   },
   devServer: {
@@ -30,13 +30,13 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
-        resolve: { extensions: [".js", ".jsx"] }
+        resolve: { extensions: [".js", ".jsx"] },
       },
       {
         test: /\.svg$/,
-        use: ["file-loader"]
+        use: ["file-loader"],
       },
-    ]
+    ],
   },
-  plugins: [htmlWebpackPlugin]
-}; 
+  plugins: [htmlWebpackPlugin],
+};

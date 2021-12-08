@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 module.exports = {
   up: async (queryInterface) => {
-    const {results: rawData} = require('../raw_data/fistia-ai.json');
-    const floatStrToInt = require('../utils/floatStrToInt.js');
+    const { results: rawData } = require("../raw_data/fistia-ai.json");
+    const floatStrToInt = require("../utils/floatStrToInt.js");
     let records = [];
-    rawData.forEach((record)=>{
+    rawData.forEach((record) => {
       records.push({
         song_request_no: record.content.requestNumber, // TODO: move to other table later
         sang_at: new Date(record.sangAt),
@@ -23,12 +23,12 @@ module.exports = {
         updated_at: new Date(),
       });
     });
-    records.sort((r1, r2)=>(r1.sang_at.getTime() - r2.sang_at.getTime()));
+    records.sort((r1, r2) => r1.sang_at.getTime() - r2.sang_at.getTime());
 
-    return await queryInterface.bulkInsert('ai_score_records', records);
+    return await queryInterface.bulkInsert("ai_score_records", records);
   },
 
   down: async (queryInterface) => {
-    return await queryInterface.bulkDelete('ai_score_records', null);
-  }
+    return await queryInterface.bulkDelete("ai_score_records", null);
+  },
 };
